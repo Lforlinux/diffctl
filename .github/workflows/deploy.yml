@@ -9,6 +9,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     
     steps:
     - name: Checkout
@@ -24,10 +28,17 @@ jobs:
       run: npm ci
 
     - name: Build
-      run: npm run build
-
-    - name: List build output
-      run: ls -la dist/
+      run: |
+        npm run build
+        echo "Build completed, checking output..."
+        ls -la
+        if [ -d "dist" ]; then
+          echo "dist folder exists:"
+          ls -la dist/
+        else
+          echo "ERROR: dist folder not found!"
+          exit 1
+        fi
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -36,3 +47,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
         force_orphan: true
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
