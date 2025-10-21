@@ -159,4 +159,32 @@
       transform: translateY(0);
     }
   }
+  
+  .footer {
+    background: transparent;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+    width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  .footer a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
 } 
