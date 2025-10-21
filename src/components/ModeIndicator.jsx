@@ -15,7 +15,7 @@ const ModeIndicator = ({ detection }) => {
         }`}>
           {mode === 'json' ? 'JSON' : 'Text'} Diff Mode
         </span>
-        <span className="text-xs text-636e72 dark:text-gray-400">
+        <span className="text-xs text-gray-600 dark:text-gray-400">
           {Math.round(confidence * 100)}% confidence
         </span>
       </div>

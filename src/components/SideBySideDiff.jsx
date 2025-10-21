@@ -48,13 +48,13 @@ const SideBySideDiff = ({ diff }) => {
   return (
     <div className="card">
       <div className="p-4 border-b border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
-        <h3 className="text-lg font-semibold text-2d3436 dark:text-white">Side-by-Side Comparison</h3>
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Side-by-Side Comparison</h3>
       </div>
       <div className="p-4">
         <div className="grid grid-cols-2 gap-4">
           {/* Original Text */}
           <div>
-            <h4 className="text-sm font-medium text-636e72 dark:text-gray-300 mb-2">Original</h4>
+            <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Original</h4>
             <div className="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto max-h-96 overflow-y-auto">
               <div className="font-mono text-sm">
                 {originalLines.map((line, index) => (
@@ -76,7 +76,7 @@ const SideBySideDiff = ({ diff }) => {
 
           {/* Modified Text */}
           <div>
-            <h4 className="text-sm font-medium text-636e72 dark:text-gray-300 mb-2">Modified</h4>
+            <h4 className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Modified</h4>
             <div className="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto max-h-96 overflow-y-auto">
               <div className="font-mono text-sm">
                 {modifiedLines.map((line, index) => (

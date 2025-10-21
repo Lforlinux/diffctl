@@ -120,8 +120,8 @@ function App() {
         {/* Simple status display */}
         {detectedMode && (
           <div className="mb-4 p-4 card text-center">
-            <p className="text-2d3436 dark:text-ddd">Mode: {detectedMode.mode}</p>
-            <p className="text-2d3436 dark:text-ddd">Confidence: {Math.round(detectedMode.confidence * 100)}%</p>
+            <p className="text-gray-800 dark:text-gray-200">Mode: {detectedMode.mode}</p>
+            <p className="text-gray-800 dark:text-gray-200">Confidence: {Math.round(detectedMode.confidence * 100)}%</p>
             {detectedMode.warning && <p className="text-yellow-600">Warning: {detectedMode.warning}</p>}
           </div>
         )}

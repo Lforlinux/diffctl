@@ -16,7 +16,7 @@ const JsonDiffOutput = ({ jsonDiff }) => {
   if (diff.length === 0) {
     return (
       <div className="card p-6">
-        <p className="text-636e72 text-center">No differences found in JSON</p>
+        <p className="text-gray-600 text-center">No differences found in JSON</p>
       </div>
     )
   }
@@ -24,8 +24,8 @@ const JsonDiffOutput = ({ jsonDiff }) => {
   return (
     <div className="card">
       <div className="p-4 border-b border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
-        <h3 className="text-lg font-semibold text-2d3436 dark:text-white">JSON Differences</h3>
-        <p className="text-sm text-636e72 dark:text-gray-400 mt-1">
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">JSON Differences</h3>
+        <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
           Found {diff.length} difference{diff.length !== 1 ? 's' : ''}
         </p>
       </div>
@@ -41,7 +41,7 @@ const JsonDiffOutput = ({ jsonDiff }) => {
                 }`}>
                   {change.type.toUpperCase()}
                 </span>
-                <span className="text-sm font-mono text-636e72 dark:text-gray-400">
+                <span className="text-sm font-mono text-gray-600 dark:text-gray-400">
                   {change.path}
                 </span>
               </div>
@@ -49,7 +49,7 @@ const JsonDiffOutput = ({ jsonDiff }) => {
               <div className="space-y-2">
                 {change.type === 'added' && (
                   <div>
-                    <span className="text-sm font-medium text-2d3436 dark:text-gray-300">Added:</span>
+                    <span className="text-sm font-medium text-gray-800 dark:text-gray-300">Added:</span>
                     <pre className="mt-1 p-2 diff-added rounded text-sm font-mono overflow-x-auto">
                       {change.formatted}
                     </pre>
@@ -58,7 +58,7 @@ const JsonDiffOutput = ({ jsonDiff }) => {
                 
                 {change.type === 'removed' && (
                   <div>
-                    <span className="text-sm font-medium text-2d3436 dark:text-gray-300">Removed:</span>
+                    <span className="text-sm font-medium text-gray-800 dark:text-gray-300">Removed:</span>
                     <pre className="mt-1 p-2 diff-removed rounded text-sm font-mono overflow-x-auto">
                       {change.formatted}
                     </pre>
@@ -68,13 +68,13 @@ const JsonDiffOutput = ({ jsonDiff }) => {
                 {change.type === 'modified' && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <span className="text-sm font-medium text-2d3436 dark:text-gray-300">Old Value:</span>
+                      <span className="text-sm font-medium text-gray-800 dark:text-gray-300">Old Value:</span>
                       <pre className="mt-1 p-2 diff-removed rounded text-sm font-mono overflow-x-auto">
                         {change.formatted.old}
                       </pre>
                     </div>
                     <div>
-                      <span className="text-sm font-medium text-2d3436 dark:text-gray-300">New Value:</span>
+                      <span className="text-sm font-medium text-gray-800 dark:text-gray-300">New Value:</span>
                       <pre className="mt-1 p-2 diff-added rounded text-sm font-mono overflow-x-auto">
                         {change.formatted.new}
                       </pre>

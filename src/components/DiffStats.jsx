@@ -45,20 +45,20 @@ const DiffStats = ({ diff, diffMode }) => {
   return (
     <div className="card mb-6">
       <div className="p-4 border-b border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 rounded-t-lg">
-        <h3 className="text-lg font-semibold text-2d3436 dark:text-white">Diff Statistics</h3>
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Diff Statistics</h3>
       </div>
       <div className="p-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center">
             <div className="text-2xl font-bold" style={{color: '#00b894'}}>{stats.added}</div>
-            <div className="text-sm text-636e72 dark:text-gray-400">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               {diffMode === 'json' ? 'Properties Added' : 'Lines Added'}
             </div>
           </div>
           
           <div className="text-center">
             <div className="text-2xl font-bold" style={{color: '#ff6b6b'}}>{stats.removed}</div>
-            <div className="text-sm text-636e72 dark:text-gray-400">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               {diffMode === 'json' ? 'Properties Removed' : 'Lines Removed'}
             </div>
           </div>
@@ -66,32 +66,32 @@ const DiffStats = ({ diff, diffMode }) => {
           {diffMode === 'json' && (
             <div className="text-center">
               <div className="text-2xl font-bold" style={{color: '#fdcb6e'}}>{stats.modified}</div>
-              <div className="text-sm text-636e72 dark:text-gray-400">Properties Modified</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Properties Modified</div>
             </div>
           )}
           
           {diffMode === 'text' && (
             <div className="text-center">
               <div className="text-2xl font-bold" style={{color: '#74b9ff'}}>{stats.unchanged}</div>
-              <div className="text-sm text-636e72 dark:text-gray-400">Lines Unchanged</div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">Lines Unchanged</div>
             </div>
           )}
           
           <div className="text-center">
             <div className="text-2xl font-bold" style={{color: '#74b9ff'}}>{stats.percentage}%</div>
-            <div className="text-sm text-636e72 dark:text-gray-400">Changed</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Changed</div>
           </div>
         </div>
         
         {diffMode === 'text' && (
           <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-636e72 dark:text-gray-400">Total Lines:</span>
-              <span className="font-medium text-2d3436 dark:text-white">{stats.total}</span>
+              <span className="text-gray-600 dark:text-gray-400">Total Lines:</span>
+              <span className="font-medium text-gray-800 dark:text-white">{stats.total}</span>
             </div>
             <div className="flex items-center justify-between text-sm mt-1">
-              <span className="text-636e72 dark:text-gray-400">Change Rate:</span>
-              <span className="font-medium text-2d3436 dark:text-white">
+              <span className="text-gray-600 dark:text-gray-400">Change Rate:</span>
+              <span className="font-medium text-gray-800 dark:text-white">
                 {stats.added + stats.removed > 0 ? 
                   `${Math.round((stats.added + stats.removed) / stats.total * 100)}%` : 
                   '0%'
@@ -104,12 +104,12 @@ const DiffStats = ({ diff, diffMode }) => {
         {diffMode === 'json' && (
           <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-600">
             <div className="flex items-center justify-between text-sm">
-              <span className="text-636e72 dark:text-gray-400">Total Changes:</span>
-              <span className="font-medium text-2d3436 dark:text-white">{stats.total}</span>
+              <span className="text-gray-600 dark:text-gray-400">Total Changes:</span>
+              <span className="font-medium text-gray-800 dark:text-white">{stats.total}</span>
             </div>
             <div className="flex items-center justify-between text-sm mt-1">
-              <span className="text-636e72 dark:text-gray-400">Change Rate:</span>
-              <span className="font-medium text-2d3436 dark:text-white">{stats.percentage}%</span>
+              <span className="text-gray-600 dark:text-gray-400">Change Rate:</span>
+              <span className="font-medium text-gray-800 dark:text-white">{stats.percentage}%</span>
             </div>
           </div>
         )}
