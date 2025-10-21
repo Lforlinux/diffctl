@@ -10,12 +10,12 @@ const ModeIndicator = ({ detection }) => {
       <div className="flex items-center justify-center gap-2">
         <span className={`px-3 py-1 rounded-full text-xs font-medium ${
           mode === 'json' 
-            ? 'bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200' 
-            : 'bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200'
+            ? 'diff-added' 
+            : 'btn-secondary'
         }`}>
           {mode === 'json' ? 'JSON' : 'Text'} Diff Mode
         </span>
-        <span className="text-xs text-gray-500 dark:text-gray-400">
+        <span className="text-xs text-636e72 dark:text-gray-400">
           {Math.round(confidence * 100)}% confidence
         </span>
       </div>

@@ -5,6 +5,11 @@ const ThemeToggle = ({ isDark, onToggle }) => {
     <button
       onClick={onToggle}
       className="fixed top-4 right-4 p-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 z-50"
+      style={{
+        background: 'rgba(255, 255, 255, 0.95)',
+        backdropFilter: 'blur(10px)',
+        boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)'
+      }}
       aria-label="Toggle theme"
     >
       {isDark ? (

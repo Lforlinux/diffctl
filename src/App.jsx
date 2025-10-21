@@ -69,14 +69,14 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen">
       <ThemeToggle isDark={isDark} onToggle={toggleTheme} />
       <div className="container mx-auto px-4 py-8">
         <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-4xl font-bold text-white mb-2" style={{textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'}}>
             diffctl
           </h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-white" style={{opacity: 0.9, textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)'}}>
             A smart, sysadmin-friendly diff checker for text and JSON.
           </p>
         </header>
@@ -99,14 +99,16 @@ function App() {
         <div className="flex justify-center gap-4 mb-6">
           <button
             onClick={handleCompare}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="btn-primary"
           >
+            <span className="btn-icon">🔍</span>
             Compare
           </button>
           <button
             onClick={handleClear}
-            className="px-6 py-2 bg-gray-600 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            className="btn-secondary"
           >
+            <span className="btn-icon">🗑️</span>
             Clear All
           </button>
         </div>
@@ -117,9 +119,9 @@ function App() {
         
         {/* Simple status display */}
         {detectedMode && (
-          <div className="mb-4 p-2 bg-gray-100 dark:bg-gray-800 rounded text-sm text-center">
-            <p>Mode: {detectedMode.mode}</p>
-            <p>Confidence: {Math.round(detectedMode.confidence * 100)}%</p>
+          <div className="mb-4 p-4 card text-center">
+            <p className="text-2d3436 dark:text-ddd">Mode: {detectedMode.mode}</p>
+            <p className="text-2d3436 dark:text-ddd">Confidence: {Math.round(detectedMode.confidence * 100)}%</p>
             {detectedMode.warning && <p className="text-yellow-600">Warning: {detectedMode.warning}</p>}
           </div>
         )}
@@ -131,8 +133,8 @@ function App() {
                 onClick={() => setViewMode('unified')}
                 className={`px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                   viewMode === 'unified'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                    ? 'btn-primary'
+                    : 'btn-secondary'
                 }`}
               >
                 Unified View
@@ -141,8 +143,8 @@ function App() {
                 onClick={() => setViewMode('side-by-side')}
                 className={`px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
                   viewMode === 'side-by-side'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                    ? 'btn-primary'
+                    : 'btn-secondary'
                 }`}
               >
                 Side-by-Side View
