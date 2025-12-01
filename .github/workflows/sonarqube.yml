@@ -34,6 +34,13 @@ jobs:
       run: npm run lint || true
       continue-on-error: true
 
+    # Update sonar-project.properties with organization if provided via secret
+    - name: Configure SonarQube properties
+      if: ${{ secrets.SONAR_ORGANIZATION != '' }}
+      run: |
+        echo "sonar.organization=${{ secrets.SONAR_ORGANIZATION }}" >> sonar-project.properties
+        echo "sonar.projectKey=${{ secrets.SONAR_ORGANIZATION }}_diffctl" >> sonar-project.properties
+
     # SonarQube Scan (works with both SonarCloud and self-hosted)
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
