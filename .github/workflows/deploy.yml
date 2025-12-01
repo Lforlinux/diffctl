@@ -1,13 +1,12 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (DEPRECATED - Use ci-cd.yml)
 
+# This workflow is disabled - use .github/workflows/ci-cd.yml instead
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch:  # Only allow manual trigger to prevent conflicts
 
 jobs:
   build-and-deploy:
+    if: false  # Disable this job
     runs-on: ubuntu-latest
     permissions:
       contents: read
