@@ -175,6 +175,51 @@ For each comparison, the tool provides:
 - **Dark Theme**: Easy on the eyes for low-light environments
 - **Persistent Preference**: Remembers your choice across sessions
 
+## Code Quality with SonarQube
+
+This project includes SonarQube integration for continuous code quality analysis.
+
+### Setup SonarCloud (Recommended for Open Source)
+
+1. **Create a SonarCloud account**:
+   - Go to [sonarcloud.io](https://sonarcloud.io)
+   - Sign in with your GitHub account
+
+2. **Import your repository**:
+   - After logging in, click "Analyze a project"
+   - Select your GitHub organization/user
+   - Choose the `diffctl` repository
+   - SonarCloud will automatically create a project
+
+3. **Get your token**:
+   - Go to your account settings → Security
+   - Generate a new token (name it "GitHub Actions")
+   - Copy the token
+
+4. **Add GitHub Secrets**:
+   - Go to your GitHub repository → Settings → Secrets and variables → Actions
+   - Add a new secret named `SONAR_TOKEN` with the token from step 3
+   - (Optional) Add `SONAR_HOST_URL` as `https://sonarcloud.io` (this is the default)
+
+5. **The workflow will run automatically** on pushes and pull requests!
+
+### Setup Self-Hosted SonarQube
+
+If you're using a self-hosted SonarQube instance:
+
+1. **Add GitHub Secrets**:
+   - `SONAR_TOKEN`: Your SonarQube authentication token
+   - `SONAR_HOST_URL`: Your SonarQube server URL (e.g., `https://sonarqube.example.com`)
+
+2. **Update `sonar-project.properties`** if needed to match your SonarQube project configuration
+
+### Viewing Results
+
+- **SonarCloud**: Results appear in the SonarCloud dashboard and as PR comments
+- **Self-hosted**: Results appear in your SonarQube instance dashboard
+
+The analysis runs automatically on every push to `main` and on pull requests.
+
 ## Contributing
 
 1. Fork the repository
