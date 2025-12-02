@@ -30,4 +30,3 @@ export function hashPassword(password) {
 export function generateToken() {
   return Math.random().toString() // Not cryptographically secure
 }
-
